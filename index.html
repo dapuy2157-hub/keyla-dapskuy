@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sebuah ruang kecil dan album kenangan untuk Keyla.">
+    <title>Untuk Keyla — Our Memories</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Film Grain / Noise Overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles-container" id="particles" aria-hidden="true"></div>
+
+    <!-- ENTRY SCREEN (Musik otomatis menyala saat tombol ini ditekan) -->
+    <div id="entry-screen" class="entry-screen">
+        <div class="entry-content">
+            <span class="entry-subtitle">Untuk Keyla.</span>
+            <h1 class="entry-title">Terima kasih sudah nemenin aku sejauh ini.</h1>
+            <p class="entry-desc">
+                Ini bukan sesuatu yang besar.<br>
+                Cuma sedikit cara aku buat bilang kalau aku menghargai semua yang udah kita lewati.
+            </p>
+            <button id="open-btn" class="btn-primary" aria-label="Buka halaman kenangan">
+                <span>Open Our Memories</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN WEBSITE CONTENT -->
+    <div id="main-content" class="main-content hidden">
+
+        <!-- FLOATING MUSIC PLAYER -->
+        <div class="music-player-bar">
+            <button id="play-pause-btn" class="music-toggle-btn" aria-label="Toggle background music">
+                <span id="music-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </span>
+                <div class="music-info">
+                    <span class="song-title">Our Memories</span>
+                    <span id="music-status" class="music-label">Playing</span>
+                </div>
+            </button>
+            <div class="visualizer" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- HERO SECTION -->
+        <header class="site-hero">
+            <div class="container hero-container">
+                <span class="hero-tag">Hey, Keyla.</span>
+                <h1 class="hero-heading">Thank You For Being Here.</h1>
+                <p class="hero-sub">Untuk semua waktu, cerita, tawa, dan hal-hal kecil yang kita lewati bareng.</p>
+                
+                <div class="hero-photo-wrap reveal">
+                    <img src="assets/photos/photo-01.jpg" alt="Keyla" class="hero-main-photo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 4 3\'><rect width=\'4\' height=\'3\' fill=\'%23121216\'/></svg>'">
+                </div>
+            </div>
+        </header>
+
+        <!-- OUR STORY / TIMELINE SECTION -->
+        <section class="story-section" id="story">
+            <div class="container">
+                <div class="section-title-wrap reveal">
+                    <span class="section-tag">Chapters</span>
+                    <h2>Our Story</h2>
+                    <p>Perjalanan kecil yang membentuk kita sampai hari ini.</p>
+                </div>
+                <div class="story-wrapper" id="story-container">
+                    <!-- Dirender dinamis dari JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- MEMORY GALLERY SECTION -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <div class="section-title-wrap reveal">
+                    <span class="section-tag">Gallery</span>
+                    <h2>Little Moments, Big Memories.</h2>
+                    <p>Potongan-potongan kecil dari cerita kita.</p>
+                </div>
+                <div class="gallery-grid" id="gallery-container">
+                    <!-- Dirender dinamis dari JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- THANK YOU SECTION -->
+        <section class="thanks-section">
+            <div class="container narrow-container">
+                <div class="thanks-card reveal">
+                    <span class="section-tag">Appreciation</span>
+                    <h2>Thank You, Keyla.</h2>
+                    <p>Terima kasih karena sampai sekarang masih mau nemenin aku, ngadepin sisi kepalaku, dan ada di setiap fase yang kita jalanin.</p>
+                    <p>Terima kasih buat semua waktu yang udah kita bagi. Buat tawa, cerita, obrolan random tengah malam, dan hal-hal sederhana yang kelihatannya biasa saja tapi nyatanya berarti banget buat aku.</p>
+                    <p>Kadang aku mungkin bukan orang yang paling puitis atau sering muji, tapi aku benar-benar menghargai keberadaan kamu di hidup aku.</p>
+                    <p class="thanks-highlight">Semoga kita masih punya banyak lembar cerita baru yang belum ditulis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECIAL MESSAGE SECTION -->
+        <section class="special-message-section">
+            <div class="container narrow-container">
+                <div class="special-card reveal">
+                    <h3>One Thing I Want You To Know</h3>
+                    <p>Hubungan ini bukan soal kesempurnaan, tapi soal dua orang yang memilih buat saling dukung, tumbuh bareng, dan menikmati setiap prosesnya.</p>
+                    <p>Terima kasih sudah jadi rumah tempat aku pulang setelah hari-hari yang melelahkan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAVORITE THINGS SECTION -->
+        <section class="favorites-section">
+            <div class="container">
+                <div class="section-title-wrap reveal">
+                    <span class="section-tag">Highlights</span>
+                    <h2>Some Of My Favorite Things About Us</h2>
+                </div>
+                <div class="favorites-grid reveal">
+                    <div class="fav-card">
+                        <div class="fav-icon">✦</div>
+                        <h4>Our Random Conversations</h4>
+                        <p>Dari topik yang penting banget sampai obrolan nggak penting jam 2 pagi.</p>
+                    </div>
+                    <div class="fav-card">
+                        <div class="fav-icon">✦</div>
+                        <h4>Our Inside Jokes</h4>
+                        <p>Hal-hal receh yang cuma kita berdua yang paham dan sukses bikin ketawa.</p>
+                    </div>
+                    <div class="fav-card">
+                        <div class="fav-icon">✦</div>
+                        <h4>Small Adventures</h4>
+                        <p>Ngelakuin hal-hal santai berdua, nyari makanan enak, atau sekadar jalan tanpa arah.</p>
+                    </div>
+                    <div class="fav-card">
+                        <div class="fav-icon">✦</div>
+                        <h4>Supporting Each Another</h4>
+                        <p>Saling semangatin pas lagi capek atau pas lagi punya target masing-masing.</p>
+                    </div>
+                    <div class="fav-card">
+                        <div class="fav-icon">✦</div>
+                        <h4>Random Photos</h4>
+                        <p>Kumpulan foto candid atau muka jelek yang justru paling sering bikin senyum sendiri.</p>
+                    </div>
+                    <div class="fav-card">
+                        <div class="fav-icon">✦</div>
+                        <h4>The Little Things</h4>
+                        <p>Hal-hal kecil sehari-hari yang bikin hari biasa jadi terasa jauh lebih baik.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL SECTION / ENDING -->
+        <footer class="site-footer">
+            <div class="container center-text reveal">
+                <h2 class="final-heading">Here's to more memories.</h2>
+                <p class="final-sub">Thank you for being part of my journey, Keyla.</p>
+                
+                <div class="final-photo-wrap">
+                    <img src="assets/photos/photo-05.jpg" alt="Keyla & Daps" class="final-photo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 4 3\'><rect width=\'4\' height=\'3\' fill=\'%23121216\'/></svg>'">
+                </div>
+
+                <div class="signature">
+                    <span>— DAPSKUY</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+        <button id="lightbox-close" class="lightbox-btn close-btn" aria-label="Tutup (Escape)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <button id="lightbox-prev" class="lightbox-btn prev-btn" aria-label="Foto sebelumnya">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button id="lightbox-next" class="lightbox-btn next-btn" aria-label="Foto selanjutnya">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <p id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- AUDIO ELEMENT (Path disesuaikan ke folder 'musik' sesuai screenshot lu) -->
+    <audio id="bg-audio" loop preload="auto">
+        <source src="assets/music/memories.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
